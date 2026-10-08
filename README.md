@@ -1,20 +1,49 @@
 # AI Automation Workflows
 
-A collection of automation workflows I've built with **Zapier** and **Make.com**, documented so the logic is easy to follow.
+Automation workflows I've built with **Make.com**, **Zapier** and other tools, documented so the logic is easy to follow.
 
-## Tools
-Zapier • Make.com • Pipedrive • Mailchimp • Google Sheets • AI tools
+---
 
-## Workflows
+## 🚀 Slack Attendance Tracking System
 
-### 1. Lead Capture to CRM
-- **Problem:** Leads from forms were added to the CRM by hand.
-- **Solution:** New form submission creates a Pipedrive contact and deal automatically.
-- **Tools:** Zapier, Pipedrive, Google Sheets
-- **Result:** Less manual work and faster follow-up.
+An automated system that tracks employee check-ins and check-outs from Slack, with no manual monitoring.
 
-### 2. Email Campaign Automation
-- **Problem:** New subscribers needed a welcome sequence.
-- **Solution:** New contact triggers a Mailchimp welcome email series.
-- **Tools:** Make.com, Mailchimp
-- **Result:** Consistent onboarding with no manual sending.
+![Make.com scenario](slack-attendance-scenario.png)
+
+### The Problem
+Checking Slack by hand to track who checked in or out, and updating attendance records, was repetitive and time-consuming.
+
+### The Solution
+A Make.com scenario that watches attendance messages in Slack and handles everything in the background.
+
+### What It Does
+- Monitors attendance messages in Slack
+- Identifies whether a message is a **Check-In** or **Check-Out**
+- Captures the employee's name, ID, email, date and timestamp
+- Checks whether a check-in happened after the deadline
+- Sends the employee a **Slack DM** if they are late
+- Sends me a **Gmail notification** for late check-ins
+- Records all attendance activity in **Google Sheets**
+- Records check-out times and sends me an email notification
+- Uses duplicate checking so the same Slack message is never processed twice
+
+### Tech Stack
+| Tool | Purpose |
+|------|---------|
+| Make.com | Workflow automation |
+| Slack | Attendance messages and late notifications |
+| Google Sheets | Attendance records |
+| Gmail | Email notifications |
+| Make Data Store | Duplicate message checking |
+
+### Result
+Attendance is now tracked automatically and works reliably in daily use.
+
+### Key Takeaway
+Automation doesn't have to be complicated. A well-designed workflow connecting a few simple tools can save a surprising amount of time.
+
+---
+
+## 🔜 More workflows coming soon
+
+*Note: no company data, employee details or credentials are included in this repository.*
